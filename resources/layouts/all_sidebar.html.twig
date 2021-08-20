@@ -2,7 +2,7 @@
 <div class="sidebar-divider"></div>
 <h2 class="sidebar-title">Trending</h2>
 <br>
-
+{{data.trending}}
 </p>
 
 
@@ -15,6 +15,7 @@
 {#{n}#}
 
 <span>
+    <a href="{{data.site_url}}debates/filter_by?sdg={{n}}&titles={{val}}">
     <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" class="img-flag" width="40" title="{{val}}"/>
 </span>
 {% endfor %}

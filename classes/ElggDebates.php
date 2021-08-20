@@ -50,7 +50,7 @@ class ElggDebates extends ElggObject {
 	 * @return string
 	 * @since 1.9.0
 	 */
-	public function getExcerpt($length = 25) {
+	public function getExcerpt($length = 55) {
 		$excerpt = $this->excerpt ?: $this->description;
 		
 		return elgg_get_excerpt($excerpt, $length);

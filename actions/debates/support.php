@@ -10,7 +10,7 @@ if (!$entity) {
 }
 
 if (elgg_annotation_exists($entity_guid, 'yes')) {
-	return elgg_ok_response('', elgg_echo('likes:alreadyliked'));
+	return elgg_ok_response('', elgg_echo('likes:alreadysupported'));
 }
 
 $user = elgg_get_logged_in_user_entity();
@@ -25,10 +25,10 @@ if($value == 'no'){
     }
 
 if (!$annotation_id) {
-	return elgg_error_response(elgg_echo('likes:failure'));
+	return elgg_error_response(elgg_echo('debates:likes:failure'));
 }
 
 if ($entity->owner_guid === $user->guid) {
-	return elgg_ok_response('', elgg_echo('likes:likes'));
+	return elgg_ok_response('', elgg_echo('debates:likes:likes'));
 }
 

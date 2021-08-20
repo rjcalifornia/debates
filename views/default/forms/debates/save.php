@@ -17,6 +17,14 @@ $sustainableGoalsList = [
 	'clean_energy' => 'AFFORDABLE AND CLEAN ENERGY',
 	'economy' => 'DECENT WORK AND ECONOMIC GROWTH',
 	'innovation' => 'INDUSTRY, INNOVATION AND INFRASTRUCTURE',
+	'inequalities' => 'REDUCE INEQUALITIES',
+	'sustainable_cities' => 'SUSTAINABLE CITIES AND COMMUNITIES',
+	'consumption' => 'RESPONSIBLE CONSUMPTION AND PRODUCTION',
+	'climate' => 'CLIMATE ACTION',
+	'life_below_water' => 'LIFE BELOW WATER',
+	'life_land' => 'LIFE ON LAND',
+	'justice' => 'PEACE, JUSTICE AND STRONG INSTITUTIONS',
+	'partnerships' => 'PARTNERSHIPS FOR THE GOALS',
 //	'' => '',
  ];
 

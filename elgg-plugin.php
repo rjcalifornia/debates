@@ -47,6 +47,15 @@ return [
             'path' => '/debates/all',
             'resource' => 'debates/all'
         ],
+
+
+        //
+        'selected:object:debates' => [
+			'path' => '/debates/filter_by',
+			'resource' => 'debates/sdg',
+			
+		],
+
     ],
 
     'view_extensions' => [
