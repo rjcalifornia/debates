@@ -1,0 +1,44 @@
+<style>
+.select2-container .select2-selection--single{
+     height: 52px !important;
+     padding-top: 6px !important;
+}
+</style>
+
+<div>
+	<label>{{data.title_label}}</label><br />
+    {{data.title_input}}
+</div>
+
+
+<div>
+	<label>{{data.debates_initial_text_label}}</label><br />
+    {{data.debates_initial_text_input}}
+</div>
+
+<div>
+	<label>{{data.tags_label}}</label><br />
+	{{data.tags_input}}
+</div>
+
+
+<div>
+	<label>{{data.sdg_label}}</label><br />
+    {{data.sdg_input}}
+</div>
+
+
+<div>
+	<label>{{data.access_label}}</label><br />
+	{{data.access_input}}
+</div>
+
+
+
+{{data.hidden_container_input}}
+
+{{data.hidden_guid_input}}
+
+{{data.footer}}
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

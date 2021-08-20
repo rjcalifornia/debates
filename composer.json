@@ -1,0 +1,12 @@
+{
+    "name": "rjcalifornia/debates",
+	"type": "elgg-plugin",
+	"description": "Open Government and citizen debates plugin",
+	"license": "GPL-2.0-only",
+	"keywords": ["content", "widget"],
+	"homepage": "https://elgg.org",
+
+    "require": {
+        "twig/twig": "3.3"
+    }
+}

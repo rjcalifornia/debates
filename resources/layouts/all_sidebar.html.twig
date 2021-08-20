@@ -1,0 +1,21 @@
+<p>
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title">Trending</h2>
+<br>
+
+</p>
+
+
+<p>
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title">Filters by SDG</h2>
+<br>
+
+{% for n,val in data.goals %}
+{#{n}#}
+
+<span>
+    <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" class="img-flag" width="40" title="{{val}}"/>
+</span>
+{% endfor %}
+</p>

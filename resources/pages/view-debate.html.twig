@@ -1,0 +1,31 @@
+<div>
+{{data.entity_details}}
+</div>
+
+{{data.entity_description}}
+
+{% if data.sustainable_goals is iterable %}
+    <div class="debates-goals">
+
+        {% for n in data.sustainable_goals %}
+
+            <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" width="100">
+
+        {% endfor %}
+
+
+    </div>
+{% else %}
+
+    <img src="{{data.site_url}}mod/debates/graphics/sdg/{{data.sustainable_goals}}.png" width="100">
+
+{% endif %}
+
+
+    <div class="debates-tags">
+    {% for t in data.tags %}
+    <a href="{{data.site_url}}search?q={{t}}&search_type=tags" class="debates-tags-link">{{t}}</a>
+    {% endfor %}
+    </div>
+
+{{data.responses}}

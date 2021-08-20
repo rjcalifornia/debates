@@ -1,0 +1,47 @@
+<p>
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title">Supports</h2>
+
+{% if data.totals.total_votes != 0 %}
+{% set percentage_yes = (data.totals.yes / data.totals.total_votes) * 100 %}
+{% set percentage_no = (data.totals.no / data.totals.total_votes) * 100 %}
+{% else %}
+{% set percentage_yes = 0 %}
+{% set percentage_yes = 0 %}
+{% endif %}
+</p>
+<center>
+{% if data.can_support == true %}
+    {{data.like_button}}
+    {{data.dislike_button}}
+{% endif %}
+
+
+{% if data.can_support == false %}
+    {% if data.is_supporting == true %}
+        <button class="supporting vote-green">
+        You are supporting this debate
+        </button>
+    {% endif %}
+    
+    {% if data.is_supporting == false %}
+        <button class="supporting vote-red">
+        You are not supporting this debate
+        </button>
+    {% endif %}
+
+{% endif %}
+<br>
+<span class="total-supporting">
+    Yes: <b>{{percentage_yes|round(2, 'floor')}}%</b>
+</span>
+
+<span class="total-against">
+    No: <b>{{percentage_no|round(2, 'floor')}}%</b>
+</span>
+
+<br>
+{{data.totals.total_votes}} votes
+</center>
+
+{#{data.site_url}#}
