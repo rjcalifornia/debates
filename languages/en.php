@@ -12,7 +12,7 @@ return [
     'debates:none' => 'No debates found',
     'debates:sdg:selected' => 'Filter by: ',
     'item:object:debates' => 'Debates',
-    'debate:save:success' => 'Debate has been published successfully',
+    'debate:save:success' => 'Debate has been saved successfully',
     'likes:alreadysupported' => 'You already submitted a vote for this debate',
     'debates:likes:failure' => 'Failed to submit a vote. Try again later',
     'debates:likes:likes' => 'Vote successfully submitted',
