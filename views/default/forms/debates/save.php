@@ -54,7 +54,7 @@ $sustainableGoalsInput = elgg_view('input/select', array(
 	'id' => 'debates_sdf',
     'required' => true,
 	'options_values' => $sustainableGoalsList,
-    'value' => $vars['sdf'],
+    'value' => $vars['goals'],
 	'class' => 'js-goals-single selection-sdg',
     'multiple' => true,
 ));

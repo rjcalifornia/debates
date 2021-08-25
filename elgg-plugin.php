@@ -49,11 +49,20 @@ return [
         ],
 
 
-        //
+        //Filter by SDG
         'selected:object:debates' => [
 			'path' => '/debates/filter_by',
 			'resource' => 'debates/sdg',
 			
+		],
+
+        //Edit debate
+        'edit:object:debates' => [
+			'path' => '/debates/edit/{guid}',
+			'resource' => 'debates/edit',
+			'middleware' => [
+				\Elgg\Router\Middleware\Gatekeeper::class,
+			],
 		],
 
     ],

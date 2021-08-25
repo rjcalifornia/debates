@@ -15,5 +15,6 @@ return [
     'debate:save:success' => 'Debate has been published successfully',
     'likes:alreadysupported' => 'You already submitted a vote for this debate',
     'debates:likes:failure' => 'Failed to submit a vote. Try again later',
-    'debates:likes:likes' => 'Vote successfully submitted'
+    'debates:likes:likes' => 'Vote successfully submitted',
+    'debates:edit' => 'Edit debate',
 ];
