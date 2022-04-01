@@ -108,7 +108,7 @@ $data['hidden_container_input'] = new \Twig\Markup($hiddenContainer, 'UTF-8');
 $data['footer'] = new \Twig\Markup(($footer), 'UTF-8');
 
 
-echo $twig->render('forms/add-debates.html.twig', 
+echo $twig->render('debates/forms/add-debates.html.twig', 
         [
             'data' => $data,
         ]);

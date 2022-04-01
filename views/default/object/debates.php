@@ -2,7 +2,8 @@
 $full = elgg_extract('full_view', $vars, FALSE);
 $debates = elgg_extract('entity', $vars, FALSE);
 $site_url = elgg_get_site_url();
-
+$comments_link = null;
+$categories = null;
 if (!$debates) {
 	return;
 }
@@ -39,7 +40,7 @@ if (elgg_extract('full_view', $vars)) {
 	
 	
 
-	echo $twig->render('pages/view-debate.html.twig', 
+	echo $twig->render('debates/pages/view-debate.html.twig', 
     [
         'data' => $data,
     ]);

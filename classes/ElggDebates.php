@@ -32,9 +32,9 @@ class ElggDebates extends ElggObject {
 	 */
 	public function canComment($user_guid = 0, $default = true) {
 		//$result = parent::canComment($user_guid, $default);
-		if (!$result) {
+	//	if (!$result) {
 	//		return $result;
-		}
+	//	}
 
 		if ($this->comments_on === 'Off' || $this->status !== 'published') {
 			//return false;

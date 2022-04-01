@@ -39,7 +39,7 @@ $cloud = elgg_view("custom/debates/trending", [
 	'type' => 'object',
 	
 ]);
-
+$title = null;
 $trending = new \Twig\Markup(elgg_view_module('aside', $title, $cloud),'UTF-8');
 
  $data['goals'] = $sustainableGoalsList;
@@ -48,7 +48,7 @@ $trending = new \Twig\Markup(elgg_view_module('aside', $title, $cloud),'UTF-8');
 
 
 
-echo $twig->render('layouts/all_sidebar.html.twig', 
+echo $twig->render('debates/layouts/all_sidebar.html.twig', 
     [
         'data' => $data,
     ]);

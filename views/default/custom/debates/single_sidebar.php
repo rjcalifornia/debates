@@ -66,7 +66,7 @@ $data['totals'] = $totals;
 $data['dislike_button'] = new \Twig\Markup($dislike, 'UTF-8');
 
 
-echo $twig->render('layouts/single_sidebar.html.twig', 
+echo $twig->render('debates/layouts/single_sidebar.html.twig', 
     [
         'data' => $data,
     ]);
