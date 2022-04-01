@@ -12,6 +12,7 @@ if (!$guid) {
 	$guid = elgg_get_logged_in_user_guid();
 }
 
+$page_type = '';
 elgg_require_js("debates/select2");
 
 $container = get_entity($guid);
