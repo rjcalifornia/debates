@@ -1,4 +1,5 @@
 <?php
+use Elgg\Debates\DebatesUtils;
 
 $title = elgg_extract('title', $vars, '');
 $desc = elgg_extract('description', $vars, '');
@@ -6,27 +7,8 @@ $goals = elgg_extract('goals', $vars, '');
 
 $twig = debates_twig();
 
+$sdg = (array)DebatesUtils::decodeJsonFile('sdg.json');
 
-$sustainableGoalsList = [
-    'poverty' => 'NO POVERTY' ,
-    'hunger' => 'ZERO HUNGER' ,
-	'health' => 'GOOD HEALTH AND WELL BEING' ,
-	'education' => 'QUALITY EDUCATION' ,
-	'gender' => 'GENDER EQUALITY',
-	'clean_water' => 'CLEAN WATER AND SANITATION',
-	'clean_energy' => 'AFFORDABLE AND CLEAN ENERGY',
-	'economy' => 'DECENT WORK AND ECONOMIC GROWTH',
-	'innovation' => 'INDUSTRY, INNOVATION AND INFRASTRUCTURE',
-	'inequalities' => 'REDUCE INEQUALITIES',
-	'sustainable_cities' => 'SUSTAINABLE CITIES AND COMMUNITIES',
-	'consumption' => 'RESPONSIBLE CONSUMPTION AND PRODUCTION',
-	'climate' => 'CLIMATE ACTION',
-	'life_below_water' => 'LIFE BELOW WATER',
-	'life_land' => 'LIFE ON LAND',
-	'justice' => 'PEACE, JUSTICE AND STRONG INSTITUTIONS',
-	'partnerships' => 'PARTNERSHIPS FOR THE GOALS',
-//	'' => '',
- ];
 
 $data['hidden_guid_input'] = '';
 $guid = elgg_extract('guid', $vars, null);
@@ -53,7 +35,7 @@ $sustainableGoalsInput = elgg_view('input/select', array(
 	'name' => 'sdg',
 	'id' => 'debates_sdf',
     'required' => true,
-	'options_values' => $sustainableGoalsList,
+	'options_values' => $sdg,
     'value' => $vars['goals'],
 	'class' => 'js-goals-single selection-sdg',
     'multiple' => true,

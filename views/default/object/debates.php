@@ -1,6 +1,7 @@
 <?php
 $full = elgg_extract('full_view', $vars, FALSE);
 $debates = elgg_extract('entity', $vars, FALSE);
+$entity = elgg_extract('entity', $vars, FALSE);
 $site_url = elgg_get_site_url();
 $comments_link = null;
 $categories = null;
@@ -46,10 +47,27 @@ if (elgg_extract('full_view', $vars)) {
     ]);
 
 }else {
-    $params = [
-		'content' => $debates->getExcerpt(),
-		'icon' => true,
-	];
-	$params = $params + $vars;
-	echo elgg_view('object/elements/summary', $params);
+
+	$menu = elgg_view_menu('entity', [
+        'entity' => $entity,
+        'handler' => elgg_extract('handler', $vars),
+        'prepare_dropdown' => true,
+    ]);
+
+    $likes = elgg_view_menu('social', [
+        'entity' => $entity,
+        'handler' => elgg_extract('handler', $vars),
+        'class' => 'elgg-menu-hz',
+    ]);
+
+	$data['entity'] = $entity->toObject();
+	$data['site_url'] = $site_url;
+	$data['menu'] = new \Twig\Markup($menu, 'UTF-8');
+    $data['likes'] = new \Twig\Markup($likes, 'UTF-8');
+	 
+	echo $twig->render('debates/elements/summary.html.twig',  [ 
+        'data' => $data, 
+        
+    ]);
+	
 }
