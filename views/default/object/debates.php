@@ -1,4 +1,7 @@
 <?php
+
+use Elgg\Debates\DebatesUtils;
+
 $full = elgg_extract('full_view', $vars, FALSE);
 $debates = elgg_extract('entity', $vars, FALSE);
 $entity = elgg_extract('entity', $vars, FALSE);
@@ -54,17 +57,21 @@ if (elgg_extract('full_view', $vars)) {
         'prepare_dropdown' => true,
     ]);
 
-    $likes = elgg_view_menu('social', [
+	$social = elgg_view_menu('social', [
         'entity' => $entity,
         'handler' => elgg_extract('handler', $vars),
         'class' => 'elgg-menu-hz',
     ]);
+    $data['totals'] = DebatesUtils::getDebateVotes($entity);
 
 	$data['entity'] = $entity->toObject();
 	$data['site_url'] = $site_url;
+	$data['tags'] = $debates->tags;
 	$data['menu'] = new \Twig\Markup($menu, 'UTF-8');
-    $data['likes'] = new \Twig\Markup($likes, 'UTF-8');
-	 
+	$data['social'] = new \Twig\Markup($social, 'UTF-8');
+	$data['created_by'] = $owner;
+
+	 //var_dump($entity);
 	echo $twig->render('debates/elements/summary.html.twig',  [ 
         'data' => $data, 
         

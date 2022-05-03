@@ -1,12 +1,12 @@
 <div>
 {{data.entity_details}}
 </div>
-
+<div class="debate-desc">
 {{data.entity_description}}
-
+</div>
 {% if data.sustainable_goals is iterable %}
     <div class="debates-goals">
-
+    
         {% for n in data.sustainable_goals %}
 
             <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" width="100">
