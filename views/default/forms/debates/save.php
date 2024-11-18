@@ -6,9 +6,9 @@ $desc = elgg_extract('description', $vars, '');
 $goals = elgg_extract('goals', $vars, '');
 
 $twig = debates_twig();
-
-$sdg = (array)DebatesUtils::decodeJsonFile('sdg.json');
-
+$debatesUtils = new DebatesUtils;
+$sdg = [$debatesUtils->decodeJsonFile('sdg.json')];
+dd($sdg);
 
 $data['hidden_guid_input'] = '';
 $guid = elgg_extract('guid', $vars, null);

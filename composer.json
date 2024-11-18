@@ -7,7 +7,7 @@
 	"homepage": "https://elgg.org",
 
     "require": {
-        "twig/twig": "3.3",
-        "webmozart/json": "^1.2"
+        "webmozart/json": "^1.1",
+        "twig/twig": "^3.15"
     }
 }

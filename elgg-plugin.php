@@ -39,6 +39,7 @@ return [
 			'resource' => 'debates/add',
 			'middleware' => [
 				\Elgg\Router\Middleware\Gatekeeper::class,
+                \Elgg\Router\Middleware\PageOwnerGatekeeper::class,
 			],
         ],
 

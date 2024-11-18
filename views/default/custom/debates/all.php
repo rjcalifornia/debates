@@ -39,7 +39,7 @@ $cloud = elgg_view("custom/debates/trending", [
 	'type' => 'object',
 	
 ]);
-$title = null;
+$title = '';
 $trending = new \Twig\Markup(elgg_view_module('aside', $title, $cloud),'UTF-8');
 
  $data['goals'] = $sustainableGoalsList;
