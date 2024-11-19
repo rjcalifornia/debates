@@ -3,15 +3,26 @@ require_once(__DIR__ . '/lib/functions.php');
 
 return [
 
+    'plugin' => [
+		'name' => 'Debates for elgg',
+		'activate_on_install' => false,
+		'dependencies' => [
+			'tagcloud' => [],
+		],
+	],
     //Declare the Debates Entity
     'entities' =>[
         [
-            'type' => 'object',
-            'subtype' => 'debates',
-            'class' => 'ElggDebates',
-            'searchable' => true,
-            
-        ],
+			'type' => 'object',
+			'subtype' => 'debates',
+			'class' => 'ElggDebates',
+			'capabilities' => [
+				'commentable' => true,
+				'searchable' => true,
+				'likable' => true,
+				'restorable' => true,
+			],
+		],
     ],
 
     //Set the plugin actions. This is where we save our debates or add support
@@ -65,6 +76,19 @@ return [
 				\Elgg\Router\Middleware\Gatekeeper::class,
 			],
 		],
+
+        'collection:object:debates:owner' => [
+			'path' => '/debates/owner/{username}/{lower?}/{upper?}',
+			'resource' => 'debates/owner',
+			'requirements' => [
+				'lower' => '\d+',
+				'upper' => '\d+',
+			],
+			'middleware' => [
+				\Elgg\Router\Middleware\UserPageOwnerGatekeeper::class,
+			],
+		],
+
 
     ],
 

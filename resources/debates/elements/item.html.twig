@@ -1,0 +1,99 @@
+{% if data.totals.total_votes != 0 %}
+{% set percentage_yes = (data.totals.yes / data.totals.total_votes) * 100 %}
+{% set percentage_no = (data.totals.no / data.totals.total_votes) * 100 %}
+{% else %}
+{% set percentage_yes = 0 %}
+{% set percentage_no = 0 %}
+{% endif %}
+
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  
+
+  <!-- Grid -->
+  <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+    <div class="lg:col-span-2">
+      <h2 class="font-bold text-2xl md:text-3xl text-gray-800 dark:text-neutral-200"><a href="{{ data.entity.url }}" class="no-underline">{{ data.entity.title }}</a></h2>
+      <p class="mt-2 md:mt-4 text-gray-500 dark:text-neutral-500">{{ data.summary|raw }}</p>
+      <div>
+        {% for tag in data.tags %}
+          <a href="{{ data.site_url }}search?q={{ tag }}&entity_type=object&entity_subtype=debates&search_type=entities" style="text-decoration: none !important;">
+            <span class="py-1 px-2 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
+              <i class="bi bi-tag-fill"></i>
+              {{ tag }}
+            </span>
+          </a>
+        {% endfor %}
+      </div>
+
+<p class="mt-4 pt-2 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
+           <a href="{{data.entity.url}}#comments" data-jzz-gui-player="true"><i class="bi bi-chat-fill"></i> View comments <i class="bi bi-caret-right-fill"></i></a>
+            
+          </p>
+  
+
+
+    </div>
+    <!-- End Col -->
+
+    <div class="lg:col-span-1">
+      <div class="grid sm:grid-cols-2 gap-8 md:gap-12">
+        <!-- Icon Block -->
+        <div class="flex gap-x-5 ">
+          
+          <div class="grow ">
+                <div class="relative size-40">
+                    <svg class="rotate-[135deg] size-full" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background Circle (Gauge) -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-green-200 dark:text-neutral-700" stroke-width="1" stroke-dasharray="75 100" stroke-linecap="round"></circle>
+
+                        <!-- Gauge Progress -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-green-500 dark:text-green-500" stroke-width="2" stroke-dasharray="{{percentage_yes}} 100" stroke-linecap="round"></circle>
+                    </svg>
+
+                    <!-- Value Text -->
+                    <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                        <span class="text-xl font-bold text-green-600 dark:text-green-500"> {{percentage_yes}}% </span>
+                        <span class="text-green-600 dark:text-green-500 block">Support</span>
+                    </div>
+                </div>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+
+        <!-- Icon Block -->
+        <div class="flex gap-x-5">
+           
+          <div class="grow">
+            
+             <div class="relative size-40">
+                    <svg class="rotate-[135deg] size-full" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background Circle (Gauge) -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-orange-100 dark:text-neutral-700" stroke-width="1" stroke-dasharray="75 100" stroke-linecap="round"></circle>
+
+                        <!-- Gauge Progress -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-orange-600 dark:text-orange-500" stroke-width="2" stroke-dasharray="{{percentage_no}} 100" stroke-linecap="round"></circle>
+                    </svg>
+
+                    <!-- Value Text -->
+                    <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                        <span class="text-xl font-bold text-orange-600 dark:text-orange-500"> {{percentage_no}}% </span>
+                        <span class="text-orange-600 dark:text-orange-500 block">Against</span>
+                    </div>
+                </div>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+
+        
+      </div>
+      <h3 class="text-lg text-center font-semibold text-gray-800 dark:text-white">
+       Total: {{data.totals.total_votes }} votes
+      </h3>
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+
+<link rel="stylesheet" href="{{ data.site_url }}mod/debates/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+<link rel="stylesheet" href="{{ data.site_url }}mod/debates/dist/output.css" />

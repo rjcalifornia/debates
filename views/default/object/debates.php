@@ -70,9 +70,10 @@ if (elgg_extract('full_view', $vars)) {
 	$data['menu'] = new \Twig\Markup($menu, 'UTF-8');
 	$data['social'] = new \Twig\Markup($social, 'UTF-8');
 	$data['created_by'] = $owner;
+	$data['summary'] = $entity->getExcerpt();
 
 	 //var_dump($entity);
-	echo $twig->render('debates/elements/summary.html.twig',  [ 
+	echo $twig->render('debates/elements/item.html.twig',  [ 
         'data' => $data, 
         
     ]);
