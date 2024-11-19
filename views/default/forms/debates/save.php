@@ -7,8 +7,10 @@ $goals = elgg_extract('goals', $vars, '');
 
 $twig = debates_twig();
 $debatesUtils = new DebatesUtils;
-$sdg = [$debatesUtils->decodeJsonFile('sdg.json')];
-dd($sdg);
+
+
+$sdg = (array)$debatesUtils->decodeJsonFile('sdg.json');
+
 
 $data['hidden_guid_input'] = '';
 $guid = elgg_extract('guid', $vars, null);
@@ -28,18 +30,16 @@ $titleInput = elgg_view('input/text', array('name' => 'title', 'value' => $title
 
 $debatesInitialTextLabel = elgg_echo('debates:initial:text');
 $debatesInitialTextInput = elgg_view('input/longtext', array('name' => 'description', 'value' => $desc));
-
-
-$sustainableGoalsLabel = elgg_echo('debates:add:sdg');
-$sustainableGoalsInput = elgg_view('input/select', array(
-	'name' => 'sdg',
-	'id' => 'debates_sdf',
+ 
+$sustainableGoalsInput = elgg_view_field([
+    '#label' => elgg_echo('debates:add:sdg'),
+    '#type' => 'select',
     'required' => true,
-	'options_values' => $sdg,
-    'value' => $vars['goals'],
-	'class' => 'js-goals-single selection-sdg',
+    'name' => 'experience',
+    'options_values' => $sdg,
+    'value' => elgg_extract('experience', $vars),
     'multiple' => true,
-));
+]);
 
 $tagsLabel = elgg_echo('debates:topics');
 $tagsInput = elgg_view('input/tags', array(
@@ -48,14 +48,24 @@ $tagsInput = elgg_view('input/tags', array(
 	'value' => $vars['tags']
 ));
 
-$accessLabel = elgg_echo('access');
-$accessInput = elgg_view('input/access', array(
-	'name' => 'access_id',
-	'value' => $access_id,
-	'entity' => get_entity($guid),
-	'entity_type' => 'object',
+//$accessLabel = elgg_echo('access');
+// $accessInput = elgg_view('input/access', array(
+// 	'name' => 'access_id',
+// 	'value' => $access_id,
+// 	//'entity' => get_entity($guid),
+// 	'entity_type' => 'object',
 	
-));
+// ));
+
+$accessInput = elgg_view_field([
+    '#label' => elgg_echo('access'),
+    '#type' => 'access',
+    'name' => 'access_id',
+    'value' => elgg_extract('access_id', $vars, ACCESS_DEFAULT),
+    'entity' => elgg_extract('entity', $vars),
+    'entity_type' => 'object',
+    'required' => true,
+],);
 
 $hiddenContainer = elgg_view('input/hidden', array('name' => 'container_guid', 'value' => $container_guid));
 
@@ -75,11 +85,11 @@ $data['title_input'] = new \Twig\Markup($titleInput, 'UTF-8');
 $data['debates_initial_text_label'] = $debatesInitialTextLabel;
 $data['debates_initial_text_input'] = new \Twig\Markup($debatesInitialTextInput, 'UTF-8');
 
-$data['sdg_label'] = $sustainableGoalsLabel;
+//$data['sdg_label'] = $sustainableGoalsLabel;
 $data['sdg_input'] = new \Twig\Markup($sustainableGoalsInput, 'UTF-8');
 
 
-$data['access_label'] = $accessLabel;
+//$data['access_label'] = $accessLabel;
 $data['access_input'] = new \Twig\Markup($accessInput, 'UTF-8');
 
 $data['tags_label'] = $tagsLabel;

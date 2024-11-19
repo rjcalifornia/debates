@@ -13,7 +13,7 @@ if (!$guid) {
 }
 
 $page_type = '';
-//elgg_require_js("debates/select2");
+elgg_import_esm("debates/select2");
 
 $container = get_entity($guid);
 
