@@ -10,13 +10,16 @@
 <div class="sidebar-divider"></div>
 <h2 class="sidebar-title">Filters by SDG</h2>
 <br>
-
+<div class="grid grid-cols-4 gap-2">
 {% for n,val in data.goals %}
 {#{n}#}
 
-<span>
+<div>
     <a href="{{data.site_url}}debates/filter_by?sdg={{n}}&titles={{val}}">
-    <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" class="img-flag" width="40" title="{{val}}"/>
-</span>
+    <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" class="img-flag" width="80" title="{{val}}"/>
+    </a>
+</div>
 {% endfor %}
+</div>
+
 </p>
