@@ -31,13 +31,27 @@ $titleInput = elgg_view('input/text', array('name' => 'title', 'value' => $title
 $debatesInitialTextLabel = elgg_echo('debates:initial:text');
 $debatesInitialTextInput = elgg_view('input/longtext', array('name' => 'description', 'value' => $desc));
  
+
+//$sustainableGoalsLabel = elgg_echo('debates:add:sdg');
+// $sustainableGoalsInput = elgg_view('input/select', array(
+// 	'name' => 'sdg',
+// 	'id' => 'debates_sdf',
+//     'required' => true,
+// 	'options_values' => $sdg,
+//     'value' => $vars['goals'],
+// 	'class' => 'js-goals-single selection-sdg',
+//     'multiple' => true,
+// ));
+
 $sustainableGoalsInput = elgg_view_field([
     '#label' => elgg_echo('debates:add:sdg'),
     '#type' => 'select',
     'required' => true,
-    'name' => 'experience',
+    'name' => 'sdg',
+	'id' => 'debates_sdf',
     'options_values' => $sdg,
-    'value' => elgg_extract('experience', $vars),
+	'class' => 'js-goals-single selection-sdg',
+    'value' => elgg_extract('goals', $vars),
     'multiple' => true,
 ]);
 

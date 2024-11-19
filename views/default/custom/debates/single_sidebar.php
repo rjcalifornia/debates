@@ -17,8 +17,8 @@ $annotations = $entity->getAnnotations(
 	]	
 	);
 	//'annotation_name' => 'page',
-	$totalYes = $entity->getAnnotationsSum(['annotation_name' => 'yes']); 
-    $totalNo = $entity->getAnnotationsSum(['annotation_name' => 'no']); 
+	$totalYes = $entity->getAnnotationsSum('yes'); 
+    $totalNo = $entity->getAnnotationsSum('no'); 
 	
     $totals = ['yes'=> $totalYes, 'no'=> $totalNo, 'total_votes' => ($totalNo + $totalYes)];
 

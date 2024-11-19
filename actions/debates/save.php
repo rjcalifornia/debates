@@ -8,7 +8,8 @@ $tags = get_input('tags');
 $guid = get_input('guid');
 $container = (int)get_input('container_guid');
 
-$tagarray = string_to_tag_array($tags);
+
+$tagarray = elgg_string_to_array($tags);
 
 if ($guid) {
     $debatesEntity = get_entity($guid);
@@ -23,7 +24,7 @@ $debatesEntity->access_id = $access_id;
 $debatesEntity->tags = $tagarray;
 
 if($goals){
-    $goalsArray = string_to_tag_array($goals);
+    $goalsArray = ($goals);
     $debatesEntity->goals= $goalsArray;
 }
 

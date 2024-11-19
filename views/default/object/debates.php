@@ -12,7 +12,7 @@ if (!$debates) {
 	return;
 }
 $twig = debates_twig();
-
+$debatesUtils = new DebatesUtils();
 $owner = $debates->getOwnerEntity();
 $owner_icon = elgg_view_entity_icon($owner, 'tiny');
 
@@ -62,7 +62,7 @@ if (elgg_extract('full_view', $vars)) {
         'handler' => elgg_extract('handler', $vars),
         'class' => 'elgg-menu-hz',
     ]);
-    $data['totals'] = DebatesUtils::getDebateVotes($entity);
+    $data['totals'] = $debatesUtils->getDebateVotes($entity);
 
 	$data['entity'] = $entity->toObject();
 	$data['site_url'] = $site_url;
