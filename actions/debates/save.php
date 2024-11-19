@@ -12,25 +12,26 @@ $container = (int)get_input('container_guid');
 $tagarray = elgg_string_to_array($tags);
 
 if ($guid) {
-    $debatesEntity = get_entity($guid);
+    $debate = get_entity($guid);
 }
 else{
-    $debatesEntity = new \ElggDebates();
+    $debate = new \ElggDebates();
 }
 
-$debatesEntity->title = $title;
-$debatesEntity->description = $initialText;
-$debatesEntity->access_id = $access_id;
-$debatesEntity->tags = $tagarray;
+$debate->title = $title;
+$debate->description = $initialText;
+$debate->access_id = $access_id;
+$debate->tags = $tagarray;
+$debate->comments_on = 'On';
 
 if($goals){
     $goalsArray = ($goals);
-    $debatesEntity->goals= $goalsArray;
+    $debate->goals= $goalsArray;
 }
 
-$debatesEntity->save();
+$debate->save();
 
-$forward_url = $debatesEntity->getURL();
+$forward_url = $debate->getURL();
 
 return elgg_ok_response('', elgg_echo('debate:save:success'), $forward_url);
 

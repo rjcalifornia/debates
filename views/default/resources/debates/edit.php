@@ -11,7 +11,7 @@ $entity_guid = elgg_extract('guid', $vars);
 $entity = get_entity($entity_guid);
 
  
-elgg_require_js("debates/select2");
+elgg_import_esm("debates/select2");
  
 
 $page_owner = elgg_get_page_owner_entity();

@@ -27,11 +27,11 @@ if (elgg_extract('full_view', $vars)) {
 	$tags = $debates->tags;
 	$entity_details = elgg_view('custom/debates/user', $vars);
 	$sustainable_goals = $debates->goals;
-
+	
 	$responses = elgg_view_comments($debates, true);
 
 
-
+	
 
 	
 	$data['entity_details'] = new \Twig\Markup($entity_details,'UTF-8');

@@ -18,7 +18,7 @@ $crumbs_title = $container->name;
 
 elgg_push_collection_breadcrumbs('object', 'debates');
 
-$params['content'] = elgg_view_entity($debates, array('full_view' => true, ));
+$params['content'] = elgg_view_entity($debates, array('full_view' => true, 'show_responses' => true,));
 
 //var_dump($debates->guid);
 
