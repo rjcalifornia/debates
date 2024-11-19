@@ -34,13 +34,14 @@ foreach ($tagcloud as $tag) {
 	if ($size < 100) {
 		$size = 100;
 	}
-	$params['style'] = "font-size: $size%;";
+	$params['class'] = "inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500";
+	//$params['style'] = "font-size: $size%;";
 	$params['title'] = "$tag->tag ($tag->total)";
 
 	$tags[] = elgg_view('output/tag', $params);
 }
 
-$cloud = implode(', ', $tags);
+$cloud = implode(' ', $tags);
 
 $cloud .= elgg_view('tagcloud/extend');
 
