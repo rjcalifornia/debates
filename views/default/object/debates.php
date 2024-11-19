@@ -37,6 +37,7 @@ if (elgg_extract('full_view', $vars)) {
 	$data['entity_details'] = new \Twig\Markup($entity_details,'UTF-8');
 	$data['entity_description'] = new \Twig\Markup($debates->description, 'UTF-8');
 	$data['entity'] = $debates->toObject();
+	
 	$data['sustainable_goals'] = $sustainable_goals;
 	$data['site_url'] = $site_url;
 	$data['responses'] = new \Twig\Markup($responses, 'UTF-8');
