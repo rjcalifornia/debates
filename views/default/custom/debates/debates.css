@@ -166,17 +166,7 @@ justify-content: flex-end;
 }
 
 
-.truncate{
-  background: url(https://demo.consulproject.org/assets/truncate-7128021588d380a152ce460fe9f5a54492f666e5bf085a08ccfb85cb300188a0.png);
-    background-repeat: repeat;
-  background-repeat: repeat-x;
-  bottom: 0;
-  height: 1.5rem;
-  position: absolute;
-  width: 100%;
-  float: left;  
-
-}
+ 
 
 
 
