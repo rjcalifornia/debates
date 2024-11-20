@@ -25,6 +25,7 @@ $menu = elgg_view_menu('entity', [
 	'entity' => $entity,
 	'handler' => elgg_extract('handler', $vars),
 	'prepare_dropdown' => true,
+	'class' => 'flex justify-center items-center size-9 text-sm font-semibold rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800'
 ]);
 
 if (elgg_extract('full_view', $vars)) {
@@ -33,7 +34,6 @@ if (elgg_extract('full_view', $vars)) {
 	$entity_details = elgg_view('custom/debates/user', $vars);
 	$sustainable_goals = $debates->goals;
 	
-	//$responses = elgg_view_comments($debates, true);
 	$responses = elgg_view_comments($entity, true, $vars);
 
 	$data = [
