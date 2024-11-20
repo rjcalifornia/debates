@@ -22,7 +22,7 @@ class Site {
 		
 		$return[] = \ElggMenuItem::factory([
 			'name' => 'debates',
-			'icon' => 'edit-regular',
+			'icon' => 'comment',
 			'text' => elgg_echo('collection:object:debates'),
 			'href' => elgg_generate_url('default:object:debates'),
 		]);

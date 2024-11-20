@@ -1,7 +1,14 @@
 
 # DEBATES
 
-Citizen Participation and Open Government plugin. Inspired by the CONSUL Project: https://consulproject.org/en/
+Citizen Participation and Open Government plugin for elgg. Inspired by the CONSUL Project: https://consuldemocracy.org/
+
+### Requirements
+* PHP 8.2.x
+* Composer
+* NodeJS
+* NPM
+* elgg 6.x
 
 ## Main Features
 
@@ -19,13 +26,28 @@ those that are regularly displayed on the main debates page.
 - Select2 integration to display SDGs(Sustainable Development Goals)
 - Filter debates by SDG
 - Twig as template engine
-- Compatible with elgg 3.3 and ready for elgg 4.x
+- Compatible with elgg 6.x
 
+## Installation | Elgg
+- Download from the elgg repository
+- Unzip in the mod folder
+- Place at the bottom of the list and activate it
 
-## Getting Started
-
+## Installation | Dev
 - Clone this repository
-- Unzip it inside the mod folder
+- Run ``` composer install ``` to install the required PHP dependencies
+- Run ``` npm install ``` to install BootStrap Icons and Tailwindcss
+
+## Customizing with Tailwind CSS | Dev
+- Run  ``` npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch ``` 
+- Add the desired Tailwind CSS classes to the ``` index.html ``` file in the ``` src ``` folder
+
+## Dependencies
+
+- [Twig 3.14](https://twig.symfony.com/) - Twig is a modern template engine for PHP
+- [BootStrap Icons](https://icons.getbootstrap.com/) - Free, high quality, open source icon library with over 2,000 icons.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes to build any design, directly in your markup.
+- [Preline](https://preline.co/index.html) - Preline UI is an open-source Tailwind CSS components library for any needs.
 
 ## Information
 
