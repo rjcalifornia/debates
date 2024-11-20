@@ -167,7 +167,9 @@ justify-content: flex-end;
 
 
  
-
+p {
+  padding-bottom: 1em;
+}
 
 
 

@@ -58,6 +58,15 @@ $dislike = elgg_view('output/url', array(
     'confirm' => true,
 ));
 
+$labels = [
+    'not_supporting' => elgg_echo('debates:not_supporting'),
+    'supporting' => elgg_echo('debates:supporting'),
+    'total_votes' => elgg_echo('debates:total_votes'),
+    'total_support' => elgg_echo('debates:total_support'),
+    'total_against' => elgg_echo('debates:total_against'),
+    'sidebar_title' => elgg_echo('debates:sidebar_title'),
+];
+
 
 $data['site_url'] = $site_url;
 $data['like_button'] = new \Twig\Markup($like, 'UTF-8');
@@ -70,5 +79,6 @@ echo $twig->render(
     'debates/layouts/single_sidebar.html.twig',
     [
         'data' => $data,
+        'labels' => $labels,
     ]
 );

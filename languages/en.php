@@ -17,4 +17,13 @@ return [
     'debates:likes:failure' => 'Failed to submit a vote. Try again later',
     'debates:likes:likes' => 'Vote successfully submitted',
     'debates:edit' => 'Edit debate',
+
+    
+    'debates:not_supporting' => 'You are supporting this debate',
+    'debates:supporting' => 'You are supporting this debate',
+    'debates:total_votes'=> 'votes',
+    'debates:total_support'=> 'Support',
+    'debates:total_against'=> 'Against',
+    'debates:sidebar_title'=> 'Supports',
+    'debates:explore'=> 'Explore more debates',
 ];

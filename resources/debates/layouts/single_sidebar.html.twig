@@ -1,6 +1,6 @@
 <p>
   <div class="sidebar-divider"></div>
-  <h2 class="sidebar-title">Supports</h2>
+  <h2 class="sidebar-title"> {{labels.sidebar_title}} </h2>
 
   {% if data.totals.total_votes != 0 %}
     {% set percentage_yes = data.totals.yes / data.totals.total_votes * 100 %}
@@ -19,13 +19,13 @@
   {% if data.can_support == false %}
     {% if data.is_supporting == true %}
       <div class="inline-block bg-blue-600 rounded-2xl p-4 shadow-sm">
-        <p class="text-sm text-white">You are supporting this debate</p>
+        <span class="text-sm text-white"> {{labels.supporting}} </span>
       </div>
     {% endif %}
 
     {% if data.is_supporting == false %}
       <div class="inline-block bg-orange-600 rounded-2xl p-4 shadow-sm">
-        <p class="text-sm text-white">You are not supporting this debate</p>
+        <span class="text-sm text-white">{{labels.not_supporting}} </span>
       </div>
     {% endif %}
   {% endif %}
@@ -34,7 +34,7 @@
   <br />
   <div class="flex justify-between items-center">
     <div class="grow">
-      <h3 class="text-lg font-semibold bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent"><i class="bi bi-archive-fill"></i> {{ data.totals.total_votes }} votes</h3>
+      <h3 class="text-lg font-semibold bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent"><i class="bi bi-archive-fill"></i> {{ data.totals.total_votes }} {{labels.total_votes}} </h3>
     </div>
   </div>
 
@@ -53,7 +53,7 @@
         <!-- Value Text -->
         <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
           <span class="text-xl font-bold text-green-600 dark:text-green-500">{{ percentage_yes }}%</span>
-          <span class="text-green-600 dark:text-green-500 block">Support</span>
+          <span class="text-green-600 dark:text-green-500 block"> {{labels.total_support}} </span>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
         <!-- Value Text -->
         <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
           <span class="text-xl font-bold text-orange-600 dark:text-orange-500">{{ percentage_no }}%</span>
-          <span class="text-orange-600 dark:text-orange-500 block">Against</span>
+          <span class="text-orange-600 dark:text-orange-500 block"> {{labels.total_against}} </span>
         </div>
       </div>
     </div>

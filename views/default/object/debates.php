@@ -36,6 +36,10 @@ if (elgg_extract('full_view', $vars)) {
 	$vars['class'] = '';
 	$responses = elgg_view_comments($entity, true, $vars);
 
+	$labels = [
+		'explore' => elgg_echo('debates:explore'),	
+	];
+
 	$data = [
 				'entity_details' => new \Twig\Markup($entity_details,'UTF-8'),
 				'entity_description' => new \Twig\Markup($debates->description, 'UTF-8'),
@@ -51,6 +55,7 @@ if (elgg_extract('full_view', $vars)) {
 	echo $twig->render('debates/pages/view.twig', 
     [
         'data' => $data,
+		'labels' => $labels,
     ]);
 
 }else {
