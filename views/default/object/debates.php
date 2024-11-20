@@ -21,6 +21,11 @@ $by_line = elgg_view('page/elements/by_line', $vars);
 
 $subtitle = "$by_line $comments_link $categories";
 
+$menu = elgg_view_menu('entity', [
+	'entity' => $entity,
+	'handler' => elgg_extract('handler', $vars),
+	'prepare_dropdown' => true,
+]);
 
 if (elgg_extract('full_view', $vars)) {
 	
@@ -31,20 +36,16 @@ if (elgg_extract('full_view', $vars)) {
 	//$responses = elgg_view_comments($debates, true);
 	$responses = elgg_view_comments($entity, true, $vars);
 
-
-
-	
-
-	
-	$data['entity_details'] = new \Twig\Markup($entity_details,'UTF-8');
-	$data['entity_description'] = new \Twig\Markup($debates->description, 'UTF-8');
-	$data['entity'] = $debates->toObject();
-	
-	$data['sustainable_goals'] = $sustainable_goals;
-	$data['site_url'] = $site_url;
-	$data['responses'] = new \Twig\Markup($responses, 'UTF-8');
-    $data['tags'] = $tags;
-	
+	$data = [
+				'entity_details' => new \Twig\Markup($entity_details,'UTF-8'),
+				'entity_description' => new \Twig\Markup($debates->description, 'UTF-8'),
+				'entity' => $debates->toObject(),
+				'sustainable_goals' => $sustainable_goals,
+				'site_url' => $site_url,
+				'responses' => new \Twig\Markup($responses, 'UTF-8'),
+    			'tags' => $tags,
+				'menu' => new \Twig\Markup($menu, 'UTF-8')
+			];
 	
 
 	echo $twig->render('debates/pages/view.twig', 
@@ -54,11 +55,7 @@ if (elgg_extract('full_view', $vars)) {
 
 }else {
 
-	$menu = elgg_view_menu('entity', [
-        'entity' => $entity,
-        'handler' => elgg_extract('handler', $vars),
-        'prepare_dropdown' => true,
-    ]);
+	
 
 	$social = elgg_view_menu('social', [
         'entity' => $entity,

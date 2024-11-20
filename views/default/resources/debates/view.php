@@ -12,15 +12,13 @@ $params = [
 	'filter' => '',
 	'title' => $debates->title
 ];
-//$site_url = elgg_get_site_url();
+
 $container = $debates->getContainerEntity();
 $crumbs_title = $container->name;
 
 elgg_push_collection_breadcrumbs('object', 'debates');
 
 $params['content'] = elgg_view_entity($debates, array('full_view' => true, 'show_responses' => true,));
-
-//var_dump($debates->guid);
 
 $params['sidebar'] = elgg_view('custom/debates/single_sidebar', [
 	'page' => $page_type,

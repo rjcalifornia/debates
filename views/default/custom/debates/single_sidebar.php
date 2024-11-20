@@ -7,37 +7,35 @@ $entityGuid = elgg_extract('debate_guid', $vars);
 
 $entity = get_entity($entityGuid);
 
-$likeUrl= "action/debates/support?guid=$entityGuid&value=yes";
+$likeUrl = "action/debates/support?guid=$entityGuid&value=yes";
 
 $canSupport = true;
 
 $annotations = $entity->getAnnotations(
-	[	
-		'annotation_name' => 'yes',    // The type of annotation
-	]	
-	);
-	//'annotation_name' => 'page',
-	$totalYes = $entity->getAnnotationsSum('yes'); 
-    $totalNo = $entity->getAnnotationsSum('no'); 
-	
-    $totals = ['yes'=> $totalYes, 'no'=> $totalNo, 'total_votes' => ($totalNo + $totalYes)];
-
+    [
+        'annotation_name' => 'yes',    // The type of annotation
+    ]);
     
+$totalYes = $entity->getAnnotationsSum('yes');
+$totalNo = $entity->getAnnotationsSum('no');
 
-    if (elgg_annotation_exists($entity->guid, 'yes') || elgg_annotation_exists($entity->guid, 'no')  ) {
-       $canSupport = false;
-        //return elgg_ok_response('', elgg_echo('likes:alreadyliked'));
-    }
+$totals = ['yes' => $totalYes, 'no' => $totalNo, 'total_votes' => ($totalNo + $totalYes)];
 
-    if (elgg_annotation_exists($entity->guid, 'yes')) {
-        $data['is_supporting'] = true;
-     }
 
-     if (elgg_annotation_exists($entity->guid, 'no')) {
-        $data['is_supporting'] = false;
-        
-     }
-    
+
+if (elgg_annotation_exists($entity->guid, 'yes') || elgg_annotation_exists($entity->guid, 'no')) {
+    $canSupport = false;
+    //return elgg_ok_response('', elgg_echo('likes:alreadyliked'));
+}
+
+if (elgg_annotation_exists($entity->guid, 'yes')) {
+    $data['is_supporting'] = true;
+}
+
+if (elgg_annotation_exists($entity->guid, 'no')) {
+    $data['is_supporting'] = false;
+}
+
 
 
 $like = elgg_view('output/url', array(
@@ -48,7 +46,7 @@ $like = elgg_view('output/url', array(
 ));
 
 
-$dislikeUrl= "action/debates/support?guid=$entityGuid&value=no";
+$dislikeUrl = "action/debates/support?guid=$entityGuid&value=no";
 
 
 $dislike = elgg_view('output/url', array(
@@ -66,7 +64,9 @@ $data['totals'] = $totals;
 $data['dislike_button'] = new \Twig\Markup($dislike, 'UTF-8');
 
 
-echo $twig->render('debates/layouts/single_sidebar.html.twig', 
+echo $twig->render(
+    'debates/layouts/single_sidebar.html.twig',
     [
         'data' => $data,
-    ]);
+    ]
+);
