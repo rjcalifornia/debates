@@ -1,5 +1,11 @@
 
 # DEBATES
+<p align="center">
+  
+<img src="https://raw.githubusercontent.com/rjcalifornia/debates/refs/heads/master/graphics/preview.png" width="562">
+
+<br>
+</p>
 
 Citizen Participation and Open Government plugin for elgg. Inspired by the CONSUL Project: https://consuldemocracy.org/
 
