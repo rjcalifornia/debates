@@ -6,7 +6,7 @@ $goals = get_input('sdg');
 $access_id = get_input('access_id');
 $tags = get_input('tags');
 $guid = get_input('guid');
-$container = (int)get_input('container_guid');
+$container_guid = (int) get_input('container_guid', elgg_get_logged_in_user_guid());
 
 
 $tagarray = elgg_string_to_array($tags);
@@ -16,6 +16,7 @@ if ($guid) {
 }
 else{
     $debate = new \ElggDebates();
+    $debate->container_guid = $container_guid;
 }
 
 $debate->title = $title;
