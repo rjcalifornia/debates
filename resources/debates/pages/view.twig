@@ -42,7 +42,7 @@
 
     <div class="mt-8 gap-3 flex flex-wrap justify-start pt-4">
       {% for tag in data.tags %}
-        <a href="{{ data.site_url }}search?q={{ t }}&search_type=tags" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-blue-600 text-blue-600 dark:text-blue-500" style="text-decoration: none !important;"><i class="bi bi-tags-fill"></i> {{ tag }}</a>
+        <a href="{{ data.site_url }}search?q={{ tag }}&entity_type=object&entity_subtype=debates&search_type=entities" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-blue-600 text-blue-600 dark:text-blue-500" style="text-decoration: none !important;"><i class="bi bi-tags-fill"></i> {{ tag }}</a>
       {% endfor %}
     </div>
     <!-- End Buttons -->

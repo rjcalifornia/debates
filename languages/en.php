@@ -19,7 +19,7 @@ return [
     'debates:edit' => 'Edit debate',
 
     
-    'debates:not_supporting' => 'You are supporting this debate',
+    'debates:not_supporting' => 'You are not supporting this debate',
     'debates:supporting' => 'You are supporting this debate',
     'debates:total_votes'=> 'votes',
     'debates:total_support'=> 'Support',

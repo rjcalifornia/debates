@@ -14,9 +14,9 @@
 {% for n,val in data.goals %}
 {#{n}#}
 
-<div>
+<div class="group aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
     <a href="{{data.site_url}}debates/filter_by?sdg={{n}}&titles={{val}}">
-    <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" class="img-flag" width="80" title="{{val}}"/>
+    <img src="{{data.site_url}}mod/debates/graphics/sdg/{{n}}.png" class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" width="80" title="{{val}}"/>
     </a>
 </div>
 {% endfor %}
