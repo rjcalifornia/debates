@@ -56,6 +56,7 @@ justify-content: flex-end;
     text-decoration:none;
 
 }
+.elgg-tagcloud{line-height: 2rem !important;}
 
 .supporting{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;

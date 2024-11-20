@@ -15,7 +15,7 @@ $annotations = $entity->getAnnotations(
     [
         'annotation_name' => 'yes',    // The type of annotation
     ]);
-    
+
 $totalYes = $entity->getAnnotationsSum('yes');
 $totalNo = $entity->getAnnotationsSum('no');
 
@@ -40,8 +40,9 @@ if (elgg_annotation_exists($entity->guid, 'no')) {
 
 $like = elgg_view('output/url', array(
     'href' => $likeUrl,
-    'text' => '<i class="fas fa-thumbs-up"></i>',
-    'class' => 'elgg-menu-content elgg-button elgg-button-action',
+    'text' => '<i class="bi bi-hand-thumbs-up-fill text-xl"></i>',
+    'class' => 'inline-flex justify-center items-center size-[46px] rounded-full bg-blue-600 text-white dark:bg-blue-500',
+    'style' => 'text-decoration: none',
     'confirm' => true,
 ));
 
@@ -51,8 +52,9 @@ $dislikeUrl = "action/debates/support?guid=$entityGuid&value=no";
 
 $dislike = elgg_view('output/url', array(
     'href' => $dislikeUrl,
-    'text' => '<i class="fas fa-thumbs-down"></i>',
-    'class' => 'elgg-menu-content elgg-button elgg-button-action',
+    'text' => '<i class="bi bi-hand-thumbs-down-fill text-xl"></i>',
+    'class' => 'inline-flex justify-center items-center size-[46px] rounded-full bg-red-500 text-white dark:bg-blue-500',
+    'style' => 'text-decoration: none',
     'confirm' => true,
 ));
 

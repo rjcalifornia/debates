@@ -98,20 +98,21 @@ return [
 		],
     ],
 
-    'hooks' => [
 
-        //Register the menus
-        'register' => [
-            
-            //The navigation menu to access all debates
-            'menu:site' => [
-                'Elgg\Debates\Menus\Site::register' => [],
-            ],
 
-            //If the default route doesn't exists, it wont work
-            'menu:title:object:debates' => [
-                \Elgg\Notifications\RegisterSubscriptionMenuItemsHandler::class => [],
-            ],
-        ]
-    ],
+    //Site menu
+	'events' => [
+
+		//Register menu here
+		'register' => [
+			'menu:site' => [
+				'Elgg\Debates\Menus\Site::register' => [],
+			],
+
+
+			'menu:title:object:debates' => [
+				\Elgg\Notifications\RegisterSubscriptionMenuItemsHandler::class => [],
+			],
+		],
+	],
 ];

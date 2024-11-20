@@ -7,11 +7,12 @@
 {% set percentage_no = (data.totals.no / data.totals.total_votes) * 100 %}
 {% else %}
 {% set percentage_yes = 0 %}
-{% set percentage_yes = 0 %}
+{% set percentage_no = 0 %}
 {% endif %}
 </p>
 <center>
 {% if data.can_support == true %}
+
     {{data.like_button}}
     {{data.dislike_button}}
 {% endif %}
@@ -32,16 +33,68 @@
 
 {% endif %}
 <br>
-<span class="total-supporting">
-    Yes: <b>{{percentage_yes|round(2, 'floor')}}%</b>
-</span>
 
-<span class="total-against">
-    No: <b>{{percentage_no|round(2, 'floor')}}%</b>
-</span>
 
 <br>
-{{data.totals.total_votes}} votes
+<div class="flex justify-between items-center ">
+         
+          <div class="grow">
+            <h3 class="text-lg font-semibold bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">
+             <i class="bi bi-archive-fill"></i>  {{data.totals.total_votes}} votes
+            </h3>
+            
+          </div>
+        </div>
+
+
+<!-- Icon Block -->
+        <div class="flex gap-x-5 pt-8">
+          
+          <div class="grow ">
+                <div class="relative size-40">
+                    <svg class="rotate-[135deg] size-full" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background Circle (Gauge) -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-green-200 dark:text-neutral-700" stroke-width="1" stroke-dasharray="75 100" stroke-linecap="round"></circle>
+
+                        <!-- Gauge Progress -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-green-500 dark:text-green-500" stroke-width="2" stroke-dasharray="{{percentage_yes}} 100" stroke-linecap="round"></circle>
+                    </svg>
+
+                    <!-- Value Text -->
+                    <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                        <span class="text-xl font-bold text-green-600 dark:text-green-500"> {{percentage_yes}}% </span>
+                        <span class="text-green-600 dark:text-green-500 block">Support</span>
+                    </div>
+                </div>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+
+        <!-- Icon Block -->
+        <div class="flex gap-x-5">
+           
+          <div class="grow">
+            
+             <div class="relative size-40">
+                    <svg class="rotate-[135deg] size-full" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background Circle (Gauge) -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-orange-100 dark:text-neutral-700" stroke-width="1" stroke-dasharray="75 100" stroke-linecap="round"></circle>
+
+                        <!-- Gauge Progress -->
+                        <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-orange-600 dark:text-orange-500" stroke-width="2" stroke-dasharray="{{percentage_no}} 100" stroke-linecap="round"></circle>
+                    </svg>
+
+                    <!-- Value Text -->
+                    <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                        <span class="text-xl font-bold text-orange-600 dark:text-orange-500"> {{percentage_no}}% </span>
+                        <span class="text-orange-600 dark:text-orange-500 block">Against</span>
+                    </div>
+                </div>
+          </div>
+        </div>
+        <!-- End Icon Block -->
 </center>
+
+
 
 {#{data.site_url}#}
