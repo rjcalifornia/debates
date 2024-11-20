@@ -27,22 +27,19 @@
 
     <!-- Buttons -->
     {% if data.sustainable_goals is iterable %}
-     
-        <div class="mt-8 gap-3 flex justify-left">
-          {% for n in data.sustainable_goals %}
-            <div class="group aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
-              <img src="{{ data.site_url }}mod/debates/graphics/sdg/{{ n }}.png" width="100" class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" />
-            </div>
-          {% endfor %}
-        </div>
-      
+      <div class="mt-8 gap-3 flex justify-left">
+        {% for n in data.sustainable_goals %}
+          <div class="group aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
+            <img src="{{ data.site_url }}mod/debates/graphics/sdg/{{ n }}.png" width="100" class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" />
+          </div>
+        {% endfor %}
+      </div>
     {% else %}
       <img src="{{ data.site_url }}mod/debates/graphics/sdg/{{ data.sustainable_goals }}.png" width="100" />
     {% endif %}
 
     <div class="mt-8 gap-3 flex flex-wrap justify-start pt-4">
       {% for tag in data.tags %}
-      
         <a href="{{ data.site_url }}search?q={{ t }}&search_type=tags" class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-blue-600 text-blue-600 dark:text-blue-500" style="text-decoration: none !important;"><i class="bi bi-tags-fill"></i> {{ tag }}</a>
       {% endfor %}
     </div>

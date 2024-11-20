@@ -23,6 +23,7 @@ $debate->description = $initialText;
 $debate->access_id = $access_id;
 $debate->tags = $tagarray;
 $debate->comments_on = 'On';
+$debate->status = 'published';
 
 if($goals){
     $goalsArray = ($goals);

@@ -28,7 +28,9 @@ if (elgg_extract('full_view', $vars)) {
 	$entity_details = elgg_view('custom/debates/user', $vars);
 	$sustainable_goals = $debates->goals;
 	
-	$responses = elgg_view_comments($debates, true);
+	//$responses = elgg_view_comments($debates, true);
+	$responses = elgg_view_comments($entity, true, $vars);
+
 
 
 	
@@ -45,7 +47,7 @@ if (elgg_extract('full_view', $vars)) {
 	
 	
 
-	echo $twig->render('debates/pages/view-debate.html.twig', 
+	echo $twig->render('debates/pages/view.twig', 
     [
         'data' => $data,
     ]);
