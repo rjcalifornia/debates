@@ -32,4 +32,5 @@ return [
     'debates:filter_label'=> 'Filters by SDG',
     'debates:total_label' => 'Total',
     'debates:treding_label' => 'Trending',
+    'debates:warning_label' => 'Log in to vote for this debate',
 ];

@@ -9,14 +9,77 @@
     <div class="p-12">
         <div class="grid grid-cols-4 gap-2">
   <div class="pt-8">01</div>
-  <!-- ... -->
-  <div>09</div>
-  <div>09</div>
-  <div>09</div>
-  <div>09</div>
-  <div>09</div>
 </div>
 
+<div class="space-y-3 pt-8 pb-12">
+  <!-- Toast -->
+  <div class="max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-neutral-800 dark:border-neutral-700" role="alert" tabindex="-1" aria-labelledby="hs-toast-normal-example-label">
+    <div class="flex p-4">
+      <div class="shrink-0">
+        <svg class="shrink-0 size-4 text-blue-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <p id="hs-toast-normal-example-label" class="text-sm text-gray-700 dark:text-neutral-400">
+          This is a normal message.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Toast -->
+
+  <!-- Toast -->
+  <div class="max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-neutral-800 dark:border-neutral-700" role="alert" tabindex="-1" aria-labelledby="hs-toast-success-example-label">
+    <div class="flex p-4">
+      <div class="shrink-0">
+        <svg class="shrink-0 size-4 text-teal-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <p id="hs-toast-success-example-label" class="text-sm text-gray-700 dark:text-neutral-400">
+          This is a success message.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Toast -->
+
+  <!-- Toast -->
+  <div class="max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-neutral-800 dark:border-neutral-700" role="alert" tabindex="-1" aria-labelledby="hs-toast-error-example-label">
+    <div class="flex p-4">
+      <div class="shrink-0">
+        <svg class="shrink-0 size-4 text-red-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <p id="hs-toast-error-example-label" class="text-sm text-gray-700 dark:text-neutral-400">
+          This is an error message.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Toast -->
+
+  <!-- Toast -->
+  <div class="max-w-xs bg-white border border-gray-200 rounded-xl shadow-lg dark:bg-neutral-800 dark:border-neutral-700" role="alert" tabindex="-1" aria-labelledby="hs-toast-warning-example-label">
+    <div class="flex p-4">
+      <div class="shrink-0">
+        <svg class="shrink-0 size-4 text-yellow-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+        </svg>
+      </div>
+      <div class="ms-3">
+        <p id="hs-toast-warning-example-label" class="text-sm text-gray-700 dark:text-neutral-400">
+          This is a warning message.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- End Toast -->
+</div>
 <div class="grid lg:grid-cols-2"></div>
         <div class="flex flex-col gap-y-2">
   <div class="inline-flex flex-wrap gap-2">
@@ -111,7 +174,7 @@
   </div>
 </div>
 
-<p class="mt-4 pt-2 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
+<p class="mt-4 pt-2 pb-6 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 group-hover:underline group-focus:underline font-medium dark:text-blue-500">
             Read more
             <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </p>
@@ -273,7 +336,7 @@
       <h2 class="font-bold text-2xl md:text-3xl text-gray-800 dark:text-neutral-200 no-underline">
         We tackle the challenges start-ups face
       </h2>
-      <p class="mt-2 md:mt-4 text-gray-500 dark:text-neutral-500 truncate ...">
+      <p class="mt-2 md:mt-4 text-md text-gray-500 dark:text-neutral-500 truncate ...">
         Besides working with start-up enterprises as a partner for digitalization, we have built enterprise products for common pain points that we have encountered in various products and projects.
       </p>
     </div>
@@ -451,7 +514,7 @@
 <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-yellow-500 text-yellow-500">Badge</span>
 <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium border border-white text-white">Badge</span>
 
-<a class="group relative block rounded-xl overflow-hidden focus:outline-none" href="#">
+<a class="group relative block rounded-xl overflow-hidden focus:outline-none w-[30%] pt-12" href="#">
         <div class="aspect-w-12 aspect-h-7 sm:aspect-none rounded-xl overflow-hidden">
           <img class="group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl w-full object-cover" src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80" alt="Masonry Cards Image">
         </div>
@@ -605,7 +668,7 @@
 <!-- End Icon -->
 
 <!-- Chat Bubble -->
-<ul class="space-y-5">
+<ul class="space-y-5 p-20">
   <!-- Chat -->
   <li class="max-w-lg flex gap-x-2 sm:gap-x-4 me-11">
     <img class="inline-block size-9 rounded-full" src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80" alt="Avatar">

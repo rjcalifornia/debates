@@ -10,6 +10,7 @@ $entity = get_entity($entityGuid);
 $likeUrl = "action/debates/support?guid=$entityGuid&value=yes";
 
 $canSupport = true;
+$loggedIn = true;
 
 $annotations = $entity->getAnnotations(
     [
@@ -23,9 +24,13 @@ $totals = ['yes' => $totalYes, 'no' => $totalNo, 'total_votes' => ($totalNo + $t
 
 
 
-if (elgg_annotation_exists($entity->guid, 'yes') || elgg_annotation_exists($entity->guid, 'no')) {
+if (elgg_annotation_exists($entity->guid, 'yes') || elgg_annotation_exists($entity->guid, 'no')){
     $canSupport = false;
     //return elgg_ok_response('', elgg_echo('likes:alreadyliked'));
+}
+
+if( !elgg_is_logged_in()){
+    $loggedIn = false;
 }
 
 if (elgg_annotation_exists($entity->guid, 'yes')) {
@@ -67,12 +72,14 @@ $labels = [
     'total_support' => elgg_echo('debates:total_support'),
     'total_against' => elgg_echo('debates:total_against'),
     'sidebar_title' => elgg_echo('debates:sidebar_title'),
+    'warning_label' => elgg_echo('debates:warning_label'),
 ];
 
 
 $data['site_url'] = $site_url;
 $data['like_button'] = new \Twig\Markup($like, 'UTF-8');
 $data['can_support'] = $canSupport;
+$data['logged_in'] = $loggedIn;
 $data['totals'] = $totals;
 $data['dislike_button'] = new \Twig\Markup($dislike, 'UTF-8');
 
