@@ -38,8 +38,6 @@ if (elgg_extract('full_view', $vars)) {
 
 	$labels = [
 		'explore' => elgg_echo('debates:explore'),	
-		'total_support' => elgg_echo('debates:total_support'),
-    	'total_against' => elgg_echo('debates:total_against'),
 	];
 
 	$data = [
@@ -72,7 +70,12 @@ if (elgg_extract('full_view', $vars)) {
      
 	$labels =[
 		'comments' => elgg_echo('debates:comments'),
+		'total_support' => elgg_echo('debates:total_support'),
+    	'total_against' => elgg_echo('debates:total_against'),
+		'total_votes' => elgg_echo('debates:total_votes'),
+		'total_label' => elgg_echo('debates:total_label'),
 	];
+
 	$data = [
 		'entity' => $entity->toObject(),
 	 	'site_url' => $site_url,

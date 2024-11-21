@@ -3,10 +3,10 @@ $site_url = elgg_get_site_url();
 $twig = debates_twig();
 
 $sustainableGoalsList = [
-    'poverty' => 'NO POVERTY' ,
-    'hunger' => 'ZERO HUNGER' ,
-	'health' => 'GOOD HEALTH AND WELL BEING' ,
-	'education' => 'QUALITY EDUCATION' ,
+	'poverty' => 'NO POVERTY',
+	'hunger' => 'ZERO HUNGER',
+	'health' => 'GOOD HEALTH AND WELL BEING',
+	'education' => 'QUALITY EDUCATION',
 	'gender' => 'GENDER EQUALITY',
 	'clean_water' => 'CLEAN WATER AND SANITATION',
 	'clean_energy' => 'AFFORDABLE AND CLEAN ENERGY',
@@ -20,10 +20,10 @@ $sustainableGoalsList = [
 	'life_land' => 'LIFE ON LAND',
 	'justice' => 'PEACE, JUSTICE AND STRONG INSTITUTIONS',
 	'partnerships' => 'PARTNERSHIPS FOR THE GOALS',
-//	'' => '',
- ];
+	//	'' => '',
+];
 
- $options = [
+$options = [
 	'type' => 'object',
 	'subtype' => 'debates',
 	'threshold' => 0,
@@ -37,18 +37,28 @@ $tag_data = elgg_get_tags($options);
 $cloud = elgg_view("custom/debates/trending", [
 	'value' => $tag_data,
 	'type' => 'object',
-	
+
 ]);
 $title = '';
-$trending = new \Twig\Markup(elgg_view_module('aside', $title, $cloud),'UTF-8');
+$trending = new \Twig\Markup(elgg_view_module('aside', $title, $cloud), 'UTF-8');
 
- $data['goals'] = $sustainableGoalsList;
- $data['site_url'] = $site_url;
- $data['trending'] = $trending;
+$labels =[
+	'filter_label' => elgg_echo('debates:filter_label'),
+	'treding_label' => elgg_echo('debates:treding_label'),
+];
+
+$data = [
+	'goals' => $sustainableGoalsList,
+	'site_url' => $site_url,
+	'trending' => $trending,
+];
 
 
 
-echo $twig->render('debates/layouts/all_sidebar.html.twig', 
-    [
-        'data' => $data,
-    ]);
+echo $twig->render(
+	'debates/layouts/all_sidebar.html.twig',
+	[
+		'data' => $data,
+		'labels' => $labels,
+	]
+);

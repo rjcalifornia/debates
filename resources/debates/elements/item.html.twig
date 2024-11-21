@@ -53,7 +53,7 @@
                     <!-- Value Text -->
                     <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                         <span class="text-xl font-bold text-green-600 dark:text-green-500"> {{percentage_yes}}% </span>
-                        <span class="text-green-600 dark:text-green-500 block">Support</span>
+                        <span class="text-green-600 dark:text-green-500 block">{{labels.total_support}}</span>
                     </div>
                 </div>
           </div>
@@ -77,7 +77,7 @@
                     <!-- Value Text -->
                     <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                         <span class="text-xl font-bold text-orange-600 dark:text-orange-500"> {{percentage_no}}% </span>
-                        <span class="text-orange-600 dark:text-orange-500 block">Against</span>
+                        <span class="text-orange-600 dark:text-orange-500 block">{{labels.total_against}}</span>
                     </div>
                 </div>
           </div>
@@ -87,7 +87,7 @@
         
       </div>
       <h3 class="text-lg text-center font-semibold text-gray-800 dark:text-white">
-       Total: {{data.totals.total_votes }} votes
+       {{labels.total_label}}: {{data.totals.total_votes }} {{labels.total_votes}}
       </h3>
     </div>
     <!-- End Col -->

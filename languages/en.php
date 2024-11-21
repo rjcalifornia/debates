@@ -27,4 +27,9 @@ return [
     'debates:sidebar_title'=> 'Supports',
     'debates:explore'=> 'Explore more debates',
     'debates:comments'=> 'View comments',
+
+
+    'debates:filter_label'=> 'Filters by SDG',
+    'debates:total_label' => 'Total',
+    'debates:treding_label' => 'Trending',
 ];
