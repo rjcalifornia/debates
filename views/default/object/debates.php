@@ -38,6 +38,8 @@ if (elgg_extract('full_view', $vars)) {
 
 	$labels = [
 		'explore' => elgg_echo('debates:explore'),	
+		'total_support' => elgg_echo('debates:total_support'),
+    	'total_against' => elgg_echo('debates:total_against'),
 	];
 
 	$data = [
@@ -67,19 +69,25 @@ if (elgg_extract('full_view', $vars)) {
         'handler' => elgg_extract('handler', $vars),
         'class' => 'elgg-menu-hz',
     ]);
-    $data['totals'] = $debatesUtils->getDebateVotes($entity);
-
-	$data['entity'] = $entity->toObject();
-	$data['site_url'] = $site_url;
-	$data['tags'] = $debates->tags;
-	$data['menu'] = new \Twig\Markup($menu, 'UTF-8');
-	$data['social'] = new \Twig\Markup($social, 'UTF-8');
-	$data['created_by'] = $owner;
-	$data['summary'] = $entity->getExcerpt();
+     
+	$labels =[
+		'comments' => elgg_echo('debates:comments'),
+	];
+	$data = [
+		'entity' => $entity->toObject(),
+	 	'site_url' => $site_url,
+		'tags' => $debates->tags,
+		'menu' => new \Twig\Markup($menu, 'UTF-8'),
+		'social' => new \Twig\Markup($social, 'UTF-8'),
+		'created_by' => $owner,
+		'summary' => $entity->getExcerpt(),
+		'totals' => $debatesUtils->getDebateVotes($entity),
+		];
 
 	 //var_dump($entity);
 	echo $twig->render('debates/elements/item.html.twig',  [ 
         'data' => $data, 
+		'labels' => $labels,
         
     ]);
 	

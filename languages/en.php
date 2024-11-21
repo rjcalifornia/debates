@@ -26,4 +26,5 @@ return [
     'debates:total_against'=> 'Against',
     'debates:sidebar_title'=> 'Supports',
     'debates:explore'=> 'Explore more debates',
+    'debates:comments'=> 'View comments',
 ];
