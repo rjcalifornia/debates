@@ -43,6 +43,7 @@ $like = elgg_view('output/url', array(
     'text' => '<i class="bi bi-hand-thumbs-up-fill text-xl"></i>',
     'class' => 'inline-flex justify-center items-center size-[46px] rounded-full bg-blue-600 text-white dark:bg-blue-500',
     'style' => 'text-decoration: none',
+    'id' => 'like',
     'confirm' => true,
 ));
 
@@ -55,6 +56,7 @@ $dislike = elgg_view('output/url', array(
     'text' => '<i class="bi bi-hand-thumbs-down-fill text-xl"></i>',
     'class' => 'inline-flex justify-center items-center size-[46px] rounded-full bg-red-500 text-white dark:bg-blue-500',
     'style' => 'text-decoration: none',
+    'id' => 'dislike',
     'confirm' => true,
 ));
 

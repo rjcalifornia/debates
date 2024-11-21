@@ -7,6 +7,7 @@ elgg_entity_gatekeeper($guid, 'object', 'debates');
 
 $debates = get_entity($guid);
 
+elgg_import_esm("debates/tippy");
 // no header or tabs for viewing an individual debate
 $params = [
 	'filter' => '',
