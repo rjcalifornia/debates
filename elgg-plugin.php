@@ -98,7 +98,11 @@ return [
 		],
     ],
 
-
+	'views' => [
+		'default' => [
+			'select2.js' => __DIR__ . '/node_modules/select2/dist/js/select2.js',
+		],
+	],
 
     //Site menu
 	'events' => [

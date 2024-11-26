@@ -3,9 +3,8 @@
 	"type": "elgg-plugin",
 	"description": "Open Government and citizen debates plugin",
 	"license": "GPL-2.0-only",
-	"keywords": ["content", "widget"],
+	"keywords": ["debates","open government", "democracy"],
 	"homepage": "https://elgg.org",
-
     "require": {
         "webmozart/json": "^1.1",
         "twig/twig": "^3.15"
