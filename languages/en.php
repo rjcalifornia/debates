@@ -2,8 +2,9 @@
 
 return [
     'collection:object:debates' => 'Debates',
+    'debates:add' => 'Create a new debate',
     'collection:object:debates:all' =>  'Debates',
-    'debates:add' => 'Add a debate',
+    'add:object:debates' => 'Add a new debate',
     'debates:add:title' => 'Debate title',
     'debates:initial:text' => 'Initial debate text',
     'debates:topics' => 'Topics',
